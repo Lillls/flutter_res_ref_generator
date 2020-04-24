@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>com.xiaoyu.plugin.FlutterResRefGenerator</id>
+    <name>Flutter Res Re Generator</name>
+    <vendor email="im.lixiaoyu@gmail.com">Cheetah Mobile</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+       <applicationConfigurable instance="com.xiaoyu.plugin.SettingComponent"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="com.xiaoyu.plugin.FlutterResRefGenerator.Generator" class="com.xiaoyu.plugin.FlutterResRefGenerator"
+                text="Create Flutter Resource Reference">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <project-components>
+        <component>
+            <implementation-class>com.xiaoyu.plugin.AssetDirListener</implementation-class>
+        </component>
+    </project-components>
+</idea-plugin>
